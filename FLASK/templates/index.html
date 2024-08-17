@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Model Deployment</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            padding: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        input[type="text"] {
+            padding: 8px;
+            width: 60%;
+            font-size: 16px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        p {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Your AI Model Deployment Website!</h1>
+    <form action="/predict" method="post">
+        <label for="input_values">Enter input values (space-separated):</label><br>
+        <input type="text" id="input_values" name="input_values" placeholder="e.g., 5.1 3.5 1.4 0.2"><br><br>
+        <button type="submit">Predict</button>
+    </form>
+    <div id="prediction_result">
+        {% if prediction %}
+            <h3>Prediction Result:</h3>
+            <p>{{ prediction }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
+
